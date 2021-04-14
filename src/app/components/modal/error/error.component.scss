@@ -1,0 +1,22 @@
+.example-card {
+    max-width: 400px;
+  }
+  .modalTitulo{
+      background-color: lightgray;
+      border-radius: 1rem;
+  }
+  .tituloTexto{
+      padding-top: 1rem;
+  }
+  .cardContenido{
+      padding: 2rem;
+  }
+  .ContenedorbotonOk{
+      display: flex;
+      justify-content: center;
+  }
+
+  .botonOk{
+      padding-left: 3rem;
+      padding-right: 3rem;
+  }

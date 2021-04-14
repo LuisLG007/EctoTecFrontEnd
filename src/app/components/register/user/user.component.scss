@@ -1,0 +1,50 @@
+.centrar{    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenedor{
+    background-color: lightgreen;
+    width: 70rem;
+    display: flex;
+    padding-left: 8rem;
+    margin: 5rem auto;
+    border-radius: 4rem;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.24);
+}
+.titulo{
+    font-size: 7rem;
+    color: whitesmoke;
+    font-family: Garamon;
+    margin-top: 6rem;
+    margin-right: 8rem;
+}
+.logo{
+    width: 20rem;    
+}
+.formulario{    
+    margin-left: -30rem;
+    margin-top: -2rem;
+
+}
+.mat-form-field{
+    width:350px !important;
+ }
+ 
+ .flex{
+     display: flex;
+ }
+ .by{
+     padding-top: 2rem;
+     margin-left: 3rem;
+ }
+ .enviarContenedor{
+     display: flex;
+     justify-content: center;
+ }
+
+ .botonEnviar{
+     padding-left: 3rem;
+     padding-right: 3rem;
+ }

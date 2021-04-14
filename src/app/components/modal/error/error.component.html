@@ -1,0 +1,53 @@
+<mat-card class="example-card">
+    <mat-card-header  class="modalTitulo">    
+      <mat-card-title class="tituloTexto">Contacto</mat-card-title>     
+    </mat-card-header>
+    
+    <mat-card-content>
+      <div class="cardContenido">
+        <p>
+            Se encontrarón los siguientes errores en sus datos de contactos: 
+          </p>
+    
+          <ul>
+        
+            <li *ngIf="nombre.hasError('required')">
+                <span >
+                El Nombre es <strong>requerido</strong></span>
+            </li>
+        
+            <li  *ngIf="email.hasError('required')">
+                <span *ngIf="email.hasError('required')">
+                El Correo es <strong>requerido</strong></span>
+            </li>
+            <li *ngIf="email.hasError('pattern')">
+                <span >
+                    Formato de correo <strong>inválido</strong></span>
+            </li>            
+
+            <li *ngIf="telefono.hasError('required')">
+                <span >
+                    El teléfono es <strong>requerido</strong></span>
+            </li>
+          
+             <li *ngIf="idciudad.hasError('required')">
+                <span >
+                    La dirección es <strong>requerida</strong></span>
+            </li> 
+            <li *ngIf="fecha.hasError('required')">
+                <span >
+                    La fecha es <strong>requerida</strong></span>
+            </li>
+        </ul>
+
+          <p>
+            Por favor corrija los errores para continuar
+          </p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>     
+      <div class="ContenedorbotonOk">
+        <button class="botonOk" mat-stroked-button color="primary" (click)="CerrarModal()">Ok</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>

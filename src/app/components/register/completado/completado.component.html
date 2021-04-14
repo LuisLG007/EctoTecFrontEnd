@@ -1,0 +1,26 @@
+<div class="centrar">
+    <div class="contenedor">
+        
+        <h2 class="titulo">Green Leaves</h2>
+        <img class="logo" src="https://www.graphicsprings.com/filestorage/stencils/5f60cec39f76b3ae3ef0e9d989c28a4f.png?width=500&height=500" alt="" srcset="">
+        
+    </div>
+
+  <div class="flex">
+        <p class="from">Estimado {{ Usuario.nombre }}</p>
+        <div>
+            <p>Hemos recibido sus datos y nos pondremos en contacto con usted en la
+                brevedad posible. Enviaremos un correo con información a su cuenta: <strong>{{ Usuario.email }}</strong>.</p>
+        </div>
+        <div class="flexAtt">
+        
+            <p>Atte</p>
+            <p class="green">Green Leaves</p>
+            <p>{{ Localidad.LocalidadCompleta }}, {{ Usuario.fecha | date: 'dd/MM/yyyy' }}</p>
+        
+        </div>
+    </div>
+    
+  
+</div>
+    

@@ -1,0 +1,79 @@
+<div class="centrar">
+    <div class="contenedor">
+        
+        <h2 class="titulo">Green Leaves</h2>
+        <img class="logo" src="https://www.graphicsprings.com/filestorage/stencils/5f60cec39f76b3ae3ef0e9d989c28a4f.png?width=500&height=500" alt="" srcset="">
+        
+    </div>
+
+    
+<form class="formulario" [formGroup]="myForm" novalidate (ngSubmit)="onSubmit($event)">
+    <mat-card-content>
+        <br/>
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input type="text" matInput #input formControlName="nombre" required >
+          <mat-icon color="primary" matSuffix>person</mat-icon>         
+          <mat-error *ngIf="myForm.get('nombre').errors && myForm.get('nombre').touched">
+            <mat-error class="animate__animated animate__shakeX" *ngIf="myForm.get('nombre').hasError('required')">Campo requerido</mat-error>            
+          </mat-error>
+        </mat-form-field>     
+
+        <br/>
+
+     
+              <mat-form-field class="FormField" appearance="outline">
+                  <mat-label>Correo</mat-label>
+                  <input type="email" matInput formControlName="email" required>
+                  <mat-icon color="primary" matSuffix>email</mat-icon>
+                  <mat-error *ngIf="myForm.get('email').errors && myForm.get('email').touched">
+                  <mat-error class="animate__animated animate__shakeX" *ngIf="myForm.get('email').hasError('required')">Campo requerido</mat-error>   
+                  <mat-error class="animate__animated animate__shakeX" *ngIf="myForm.get('email').hasError('pattern')">Ingrese un correo valido</mat-error>
+                  </mat-error>
+              </mat-form-field>      
+      
+        <br/>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Teléfono</mat-label>
+            <input type="text" matInput #input formControlName="telefono" required >
+            <mat-icon color="primary" matSuffix>local_phone</mat-icon>         
+            <mat-error *ngIf="myForm.get('telefono').errors && myForm.get('telefono').touched">
+              <mat-error class="animate__animated animate__shakeX" *ngIf="myForm.get('telefono').hasError('required')">Campo requerido</mat-error>            
+            </mat-error>
+          </mat-form-field>    
+        <br/>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Fecha</mat-label>
+            <input matInput [matDatepicker]="Fecha" [min]="minDate" formControlName="fecha" required>            
+            <mat-datepicker-toggle matSuffix [for]="Fecha"></mat-datepicker-toggle>
+            <mat-datepicker #Fecha></mat-datepicker>        
+            <mat-error class="animate__animated animate__shakeX" *ngIf="myForm.get('fecha').invalid">Campo requerido</mat-error>   
+          </mat-form-field>    
+    <br/>   
+ 
+    <div class="flex">
+      <mat-form-field appearance="outline">
+        <mat-label>Buscar ciudad</mat-label>                                            
+            <input type="text" matInput [matAutocomplete]="autoC" formControlName="idciudad"/>
+            <mat-icon color="primary" matSuffix>place</mat-icon>                                                      
+              
+            <mat-error class="animate__animated animate__shakeX" *ngIf="myForm.get('idciudad').invalid">Campo requerido</mat-error>   
+
+            <mat-autocomplete #autoC="matAutocomplete"  [displayWith]="displayFnLocalidad(filteredOptions | async)" >
+              <mat-option *ngFor="let item of filteredOptions | async" [value]="item.idciudad"  (click)="localidadInfo(item)" >
+                {{ item.LocalidadCompleta }}
+              </mat-option>                        
+            </mat-autocomplete>      
+                     
+       </mat-form-field>
+       <p class="by">  Powered by <strong> LuisLG</strong>   </p>
+    </div>
+       <br/>   
+       <div class="enviarContenedor">
+          <button class="botonEnviar" type="submit" mat-raised-button class="saveDialog" color="primary"><mat-icon>save</mat-icon> Enviar</button> 
+       </div>
+  </mat-card-content>   
+</form>
+</div>
